@@ -23,23 +23,23 @@ public class StarterScript : MonoBehaviour
     {
         if (myNumber == 4 && myChoice == true)
         {
-            myName = "Jimmy";
+            myName = "Juli";
             //myGate.SetActive(true);
             name1.GetComponent<TMPro.TMP_Text>().text = "My Number: " + myNumber + " My Name: " + myName;
             name2.GetComponent<TMPro.TMP_Text>().text = "";
         }
         else
         {
-            myName = "Fred";
+            myName = "Gabriel";
             //myGate.SetActive(false);
-            name2.GetComponent<TMPro.TMP_Text>().text = "Fred is active";
-            name1.GetComponent<TMPro.TMP_Text>().text = "Jimmy is inactive";
+            name2.GetComponent<TMPro.TMP_Text>().text = "Gabriel is active";
+            name1.GetComponent<TMPro.TMP_Text>().text = "Juli is inactive";
         }
     }
 
     public void OpenGate()
     {
-        myGate.GetComponent<Animator>().Play("GateSwing");
+        myGate.GetComponent<Animator>().Play("GateSwing", 0, 0f);
     }
 
     public void HideButton()

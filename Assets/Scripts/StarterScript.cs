@@ -16,6 +16,7 @@ public class StarterScript : MonoBehaviour
     [SerializeField] GameObject fadeIn;
     [SerializeField] GameObject fadeOut;
     [SerializeField] GameObject hiddenSphere;
+    [SerializeField] AudioSource ding;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,7 +51,8 @@ public class StarterScript : MonoBehaviour
 
     public void HideButton()
     {
-        firstButton.SetActive(false);
+        // firstButton.SetActive(false);
+        ding.Play();
     }
 
     IEnumerator MySequence()

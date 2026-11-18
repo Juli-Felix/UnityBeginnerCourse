@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class StarterScript : MonoBehaviour
@@ -11,11 +12,16 @@ public class StarterScript : MonoBehaviour
     [SerializeField] GameObject name1;
     [SerializeField] GameObject name2;
     [SerializeField] GameObject firstButton;
+
+    [SerializeField] GameObject fadeIn;
+    [SerializeField] GameObject fadeOut;
+    [SerializeField] GameObject hiddenSphere;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         myNumber = 67;
         myChoice = true;
+        StartCoroutine(MySequence());
     }
 
     // Update is called once per frame
@@ -45,5 +51,18 @@ public class StarterScript : MonoBehaviour
     public void HideButton()
     {
         firstButton.SetActive(false);
+    }
+
+    IEnumerator MySequence()
+    {
+        yield return new WaitForSeconds(0.5f);
+        fadeIn.SetActive(false);
+        myGate.GetComponent<Animator>().Play("GateSwing");
+        yield return new WaitForSeconds(4);
+        firstButton.SetActive(false);
+        yield return new WaitForSeconds(5);
+        hiddenSphere.SetActive(true);
+        yield return new WaitForSeconds(4);
+        fadeOut.SetActive(true);
     }
 }

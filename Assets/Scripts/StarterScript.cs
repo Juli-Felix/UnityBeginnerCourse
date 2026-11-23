@@ -65,6 +65,6 @@ public class StarterScript : MonoBehaviour
         yield return new WaitForSeconds(5);
         hiddenSphere.SetActive(true);
         yield return new WaitForSeconds(4);
-        fadeOut.SetActive(true);
+        //fadeOut.SetActive(true);
     }
 }
